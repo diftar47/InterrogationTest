@@ -545,13 +545,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba88b9104147ea4449674ccdf9315773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suspectAnswer: {fileID: 1661831596}
-  firstQuestion: {fileID: 1999968105}
-  secondQuestion: {fileID: 284368634}
-  thirdQuestion: {fileID: 2116119923}
   firstQuestionButton: {fileID: 1803640572}
   secondQuestionButton: {fileID: 42641570}
   thirdQuestionButton: {fileID: 1062502290}
+  firstQuestionText: {fileID: 1999968105}
+  secondQuestionText: {fileID: 284368634}
+  thirdQuestionText: {fileID: 2116119923}
+  suspectAnswerText: {fileID: 1661831596}
 --- !u!114 &873849556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 1661831597}
   - component: {fileID: 1661831596}
   m_Layer: 5
-  m_Name: SuspectText
+  m_Name: SuspectAnswerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
