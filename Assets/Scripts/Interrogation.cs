@@ -5,46 +5,39 @@ using UnityEngine.UI;
 
 public class Interrogation : MonoBehaviour
 {
-    [SerializeField] private GameObject firstQuestionButton;
-    [SerializeField] private GameObject secondQuestionButton;
-    [SerializeField] private GameObject thirdQuestionButton;
-
-    [SerializeField] private Text firstQuestionText;
-    [SerializeField] private Text secondQuestionText;
-    [SerializeField] private Text thirdQuestionText;
-
+    [SerializeField] private Button buttonPrefab;
     [SerializeField] private Text suspectAnswerText;
+    [SerializeField] private RectTransform content;
 
-    InterrogationController interrController;
+    private bool isStartAnswer = true;
 
-    private void Start()
+    public void Show(string suspectAnswer, List<QuestionAssigment> questionsList)
     {
-        interrController = gameObject.AddComponent<InterrogationController>();
+        Debug.Log("show");
 
-        suspectAnswerText.text = interrController.startAnswer;
+        int count = questionsList.Count;
+        
 
-        firstQuestionText.text = interrController.firstQuestion;
-        secondQuestionText.text = interrController.secondQuestion;
-        thirdQuestionText.text = interrController.thirdQuestion;
+        //Замена текста приветствия
+        if(isStartAnswer == true)
+        {
+            suspectAnswerText.text = suspectAnswer;
+            isStartAnswer = false;
+        }
 
+        //Изменение(добавление или удаление элементов) списка с вариантами вопросов
+        foreach (var list in questionsList)
+        {
+            var instance = Instantiate(buttonPrefab);
+            instance.transform.SetParent(content.transform, false);
+            instance.GetComponentInChildren<Text>().text = list.Question;
+            instance.onClick.AddListener(
+                () =>
+                {
+                    suspectAnswerText.text = list.AnswerVariants[Random.Range(0, count)];
+                    instance.gameObject.SetActive(false);
+                }
+            );
+        }
     }
-
-    public void firstAnswer()
-    {   
-        suspectAnswerText.text = interrController.firstSuspectAnswers[Random.Range(0,3)];
-        firstQuestionButton.SetActive(false);
-    }
-
-    public void secondAnswer()
-    {  
-        suspectAnswerText.text = interrController.secondSuspectAnswers[Random.Range(0, 3)];
-        secondQuestionButton.SetActive(false);
-    }
-
-    public void thirdAnswer()
-    {       
-        suspectAnswerText.text = interrController.thirdSuspectAnswers[Random.Range(0, 3)];
-        thirdQuestionButton.SetActive(false);
-    }
-
 }
