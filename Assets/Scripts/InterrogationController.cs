@@ -25,9 +25,9 @@ public class InterrogationController : MonoBehaviour
     private void Awake()
     {
         interrogation = gameObject.GetComponent<Interrogation>();
-        firstQA = gameObject.GetComponent<QuestionAssigment>();
-        secondQA = gameObject.GetComponent<QuestionAssigment>();
-        thirdQA = gameObject.GetComponent<QuestionAssigment>();
+        firstQA = new QuestionAssigment();
+        secondQA = new QuestionAssigment();
+        thirdQA = new QuestionAssigment();
 
         firstSuspectAnswers[0] = "Это был Даня";
         firstSuspectAnswers[1] = "Это был Миша";
@@ -63,4 +63,10 @@ public class InterrogationController : MonoBehaviour
         Debug.Log("start");
         interrogation.Show(startAnswer, quest);
     }
+}
+
+public class QuestionAssigment
+{
+    public string Question;
+    public string[] AnswerVariants;
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7437297073984610326}
   - component: {fileID: 7437297073984610327}
   m_Layer: 5
-  m_Name: FirstQuestionButton
+  m_Name: QuestionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 7437297074310474115}
   - component: {fileID: 7437297074310474112}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: QuestionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

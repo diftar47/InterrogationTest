@@ -13,11 +13,6 @@ public class Interrogation : MonoBehaviour
 
     public void Show(string suspectAnswer, List<QuestionAssigment> questionsList)
     {
-        Debug.Log("show");
-
-        int count = questionsList.Count;
-        
-
         //Замена текста приветствия
         if(isStartAnswer == true)
         {
@@ -34,10 +29,12 @@ public class Interrogation : MonoBehaviour
             instance.onClick.AddListener(
                 () =>
                 {
-                    suspectAnswerText.text = list.AnswerVariants[Random.Range(0, count)];
-                    instance.gameObject.SetActive(false);
+                    suspectAnswerText.text = list.AnswerVariants[Random.Range(0, questionsList.Count)];
+
                 }
             );
         }
     }
+
+
 }

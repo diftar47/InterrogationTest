@@ -456,7 +456,6 @@ GameObject:
   - component: {fileID: 873849556}
   - component: {fileID: 873849555}
   - component: {fileID: 873849559}
-  - component: {fileID: 873849560}
   m_Layer: 5
   m_Name: InterrogationCanvas
   m_TagString: Untagged
@@ -576,7 +575,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAnswer: "\u0427\u0442\u043E \u0432\u0430\u043C \u043D\u0443\u0436\u043D\u043E,
     \u0434\u0435\u0442\u0435\u043A\u0442\u0438\u0432?"
-  quest: []
   firstQuestion: 
   firstSuspectAnswers:
   - 
@@ -592,20 +590,6 @@ MonoBehaviour:
   - 
   - 
   - 
---- !u!114 &873849560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873849553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57af02108f4b0f246b86a5729fa70210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Question: 
-  AnswerVariants: []
 --- !u!1 &971811346
 GameObject:
   m_ObjectHideFlags: 0
